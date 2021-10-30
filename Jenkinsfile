@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvni clean package'
             }
             post {
                 success {
@@ -16,7 +16,7 @@ pipeline {
         stage('Create Tomcat Docker Image'){
             steps {
                 sh "pwd"
-                sh "docker build . -t tomcatsamplewebapp:${env.BUILD_ID}"
+                sh "docker build . -t nareshboreddy/web-app"
             }
         }
 
